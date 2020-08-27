@@ -6,7 +6,7 @@
   <link href="https://hard-workingrookie.github.io/atom.xml" rel="self"/>
   
   <link href="https://hard-workingrookie.github.io/"/>
-  <updated>2020-08-27T08:50:58.021Z</updated>
+  <updated>2020-08-27T11:28:25.478Z</updated>
   <id>https://hard-workingrookie.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔记</title>
+    <link href="https://hard-workingrookie.github.io/2020/08/27/%E7%AC%94%E8%AE%B0/"/>
+    <id>https://hard-workingrookie.github.io/2020/08/27/%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-08-27T11:24:37.000Z</published>
+    <updated>2020-08-27T11:28:25.478Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="babel-plugin-import"><a href="#babel-plugin-import" class="headerlink" title="babel-plugin-import"></a>babel-plugin-import</h1><p>webpack就不会默认把整个的包都进行打包到生产环境了，而是我们使用那个组件就打包那个组件,同样CSS也是按需打包的。</p><p>配置举例：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;presets&quot;</span>:[<span class="string">&quot;next/babel&quot;</span>],  //Next.js的总配置文件，相当于继承了它本身的所有配置</span><br><span class="line">    <span class="string">&quot;plugins&quot;</span>:[     //增加新的插件，这个插件就是让antd可以按需引入，包括CSS</span><br><span class="line">        [</span><br><span class="line">            <span class="string">&quot;import&quot;</span>,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;libraryName&quot;</span>:<span class="string">&quot;antd&quot;</span>,</span><br><span class="line">                <span class="string">&quot;style&quot;</span>:<span class="string">&quot;css&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="next-js-引入css"><a href="#next-js-引入css" class="headerlink" title="next.js 引入css"></a>next.js 引入css</h1><p>先用yarn命令来安装@zeit/next-css包，它的主要功能就是让Next.js可以加载CSS文件，有了这个包才可以进行配置。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add @zeit/next-css</span><br></pre></td></tr></table></figure><p>包安装好以后就可以进行配置文件的编写了，建立一个next.config.js.这个就是Next.js的总配置文件。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const withCss = require(<span class="string">&#x27;@zeit/next-css&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(typeof require !== <span class="string">&#x27;undefined&#x27;</span>)&#123;</span><br><span class="line">    require.extensions[<span class="string">&#x27;.css&#x27;</span>]=file=&gt;&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = withCss(&#123;&#125;)</span><br></pre></td></tr></table></figure><p>这段代码你有兴趣是可以看看的，其实我对配置文件基本不记忆的，因为配置文件就是别人规定的配置，你写就好。比如要使用CSS就可以把上面这段代码输入到放入到里边的就好了。</p><p>修改配置文件需要重新启一下服务(<code>yarn dev </code>)，重启服务可以让配置生效，这时候你到浏览器中可以发现CSS文件已经生效了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;babel-plugin-import&quot;&gt;&lt;a href=&quot;#babel-plugin-import&quot; class=&quot;headerlink&quot; title=&quot;babel-plugin-import&quot;&gt;&lt;/a&gt;babel-plugin-import&lt;/h1&gt;&lt;p&gt;we</summary>
+      
+    
+    
+    
+    <category term="笔记" scheme="https://hard-workingrookie.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="笔记" scheme="https://hard-workingrookie.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>react-redux入门级学习</title>

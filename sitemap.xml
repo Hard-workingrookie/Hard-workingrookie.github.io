@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hard-workingrookie.github.io/2020/08/26/my-first-blog/</loc>
+    <loc>https://hard-workingrookie.github.io/2020/08/27/react-redux%E5%85%A5%E9%97%A8%E7%BA%A7%E5%AD%A6%E4%B9%A0/</loc>
     
-    <lastmod>2020-08-26</lastmod>
+    <lastmod>2020-08-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hard-workingrookie.github.io/2020/08/26/react-hook%E5%AD%A6%E4%B9%A0/</loc>
+    
+    <lastmod>2020-08-27</lastmod>
     
   </url>
   
@@ -59,6 +66,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://hard-workingrookie.github.io/tags/react-redux/</loc>
+    <lastmod>2020-08-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -69,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://hard-workingrookie.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://hard-workingrookie.github.io/categories/react%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2020-08-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -6,7 +6,7 @@
   <link href="https://hard-workingrookie.github.io/atom.xml" rel="self"/>
   
   <link href="https://hard-workingrookie.github.io/"/>
-  <updated>2020-08-27T11:28:25.478Z</updated>
+  <updated>2020-08-27T12:08:04.320Z</updated>
   <id>https://hard-workingrookie.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>next.js入门</title>
+    <link href="https://hard-workingrookie.github.io/2020/08/27/next-js%E5%85%A5%E9%97%A8/"/>
+    <id>https://hard-workingrookie.github.io/2020/08/27/next-js%E5%85%A5%E9%97%A8/</id>
+    <published>2020-08-27T12:02:21.000Z</published>
+    <updated>2020-08-27T12:08:04.320Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Next-js简介"><a href="#Next-js简介" class="headerlink" title="Next.js简介"></a>Next.js简介</h1><div class="note default"><p>Next.js 是一个轻量级的 React 服务端渲染应用框架。</p></div><p>目前Next.js是React服务端渲染的最佳解决方案，所以如果想使用React来开发需要SEO的应用，基本上就要使用Next.js。</p><h1 id="创建next-js项目"><a href="#创建next-js项目" class="headerlink" title="创建next.js项目"></a>创建next.js项目</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-next-app</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Next-js简介&quot;&gt;&lt;a href=&quot;#Next-js简介&quot; class=&quot;headerlink&quot; title=&quot;Next.js简介&quot;&gt;&lt;/a&gt;Next.js简介&lt;/h1&gt;&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;Next.js 是一个轻量级的 </summary>
+      
+    
+    
+    
+    <category term="react学习" scheme="https://hard-workingrookie.github.io/categories/react%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="react" scheme="https://hard-workingrookie.github.io/tags/react/"/>
+    
+    <category term="Next.js" scheme="https://hard-workingrookie.github.io/tags/Next-js/"/>
+    
+  </entry>
   
   <entry>
     <title>笔记</title>

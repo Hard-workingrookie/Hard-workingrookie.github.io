@@ -6,7 +6,7 @@
   <link href="https://hard-workingrookie.github.io/atom.xml" rel="self"/>
   
   <link href="https://hard-workingrookie.github.io/"/>
-  <updated>2020-09-28T13:41:24.293Z</updated>
+  <updated>2020-10-25T05:21:41.003Z</updated>
   <id>https://hard-workingrookie.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>websocket</title>
+    <link href="https://hard-workingrookie.github.io/2020/10/25/websocket/"/>
+    <id>https://hard-workingrookie.github.io/2020/10/25/websocket/</id>
+    <published>2020-10-25T05:15:02.000Z</published>
+    <updated>2020-10-25T05:21:41.003Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="websocket-示例代码"><a href="#websocket-示例代码" class="headerlink" title="websocket 示例代码"></a>websocket 示例代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">       div&#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 200px;</span><br><span class="line">        border: 1px solid <span class="comment">#ccc;</span></span><br><span class="line">        margin: 20px 0;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;input <span class="built_in">type</span>=<span class="string">&quot;text&quot;</span> placeholder=<span class="string">&quot;请输入您的内容&quot;</span>&gt;</span><br><span class="line">    &lt;button&gt;发送请求&lt;/button&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line"></span><br><span class="line">    var input =document.querySelector(<span class="string">&#x27;input&#x27;</span>)</span><br><span class="line">    var  button =document.querySelector(<span class="string">&#x27;button&#x27;</span>)</span><br><span class="line">    var div =document.querySelector(<span class="string">&#x27;div&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    // 1.创建websocket</span><br><span class="line">    var socket =new WebSocket(<span class="string">&#x27;ws://echo.websocket.org&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    // 2.open: 当和websocket服务连接成功的时候触发</span><br><span class="line">    socket.addEventListener(<span class="string">&#x27;open&#x27;</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">      div.innerHTML=<span class="string">&#x27;连接服务成功了&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    // 3.主动给websocket服务器发送消息</span><br><span class="line">    button.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">      var val =input.value</span><br><span class="line">      socket.send(val) </span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    // 4.接收websocket服务的数据</span><br><span class="line">    socket.addEventListener(<span class="string">&#x27;message&#x27;</span>,<span class="keyword">function</span>(e)&#123;</span><br><span class="line">      console.log(e.data)</span><br><span class="line">      div.innerHTML=e.data</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    socket.addEventListener(<span class="string">&#x27;close&#x27;</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">      div.innerHTML=<span class="string">&#x27;服务断开连接&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>点击调试工具 中的 NetWork 中的 WS 可以看到发送和接收情况</p><p>绿色是发送给服务器的<br>红色是服务器返回来的</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;websocket-示例代码&quot;&gt;&lt;a href=&quot;#websocket-示例代码&quot; class=&quot;headerlink&quot; title=&quot;websocket 示例代码&quot;&gt;&lt;/a&gt;websocket 示例代码&lt;/h1&gt;&lt;figure class=&quot;highlight </summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>sass学习</title>

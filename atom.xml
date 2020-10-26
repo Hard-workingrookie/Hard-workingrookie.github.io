@@ -6,7 +6,7 @@
   <link href="https://hard-workingrookie.github.io/atom.xml" rel="self"/>
   
   <link href="https://hard-workingrookie.github.io/"/>
-  <updated>2020-10-25T12:24:18.817Z</updated>
+  <updated>2020-10-26T14:10:32.523Z</updated>
   <id>https://hard-workingrookie.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浏览器插件入门例子</title>
+    <link href="https://hard-workingrookie.github.io/2020/10/26/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E5%85%A5%E9%97%A8%E4%BE%8B%E5%AD%90/"/>
+    <id>https://hard-workingrookie.github.io/2020/10/26/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E5%85%A5%E9%97%A8%E4%BE%8B%E5%AD%90/</id>
+    <published>2020-10-26T14:04:23.000Z</published>
+    <updated>2020-10-26T14:10:32.523Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一个解决B站文章不可复制插件"><a href="#一个解决B站文章不可复制插件" class="headerlink" title="一个解决B站文章不可复制插件"></a>一个解决B站文章不可复制插件</h1><h2 id="配置文件-manifest-json"><a href="#配置文件-manifest-json" class="headerlink" title="配置文件 manifest.json"></a>配置文件 manifest.json</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;allow copy&quot;</span>,</span><br><span class="line">    <span class="string">&quot;description&quot;</span>: <span class="string">&quot;解锁bi站复制限制&quot;</span>,</span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;1.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;manifest_version&quot;</span>: 2,</span><br><span class="line">    <span class="string">&quot;browser_action&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;default_icon&quot;</span>: <span class="string">&quot;icons/copy.jpg&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;content_scripts&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;matches&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;https://www.bilibili.com/read/*&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;js&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;js/copy.js&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;run_at&quot;</span>: <span class="string">&quot;document_start&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="js-copy-js-文件"><a href="#js-copy-js-文件" class="headerlink" title="js/copy.js 文件"></a>js/copy.js 文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(<span class="string">&#x27;load&#x27;</span>, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">    <span class="built_in">let</span> elements = document.getElementsByClassName(<span class="string">&quot;article-holder&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">let</span> index = 0; index &lt; elements.length; index++) &#123;</span><br><span class="line">        elements[index].style.userSelect = <span class="string">&quot;auto&quot;</span>;</span><br><span class="line">        elements[index].addEventListener(<span class="string">&quot;copy&quot;</span>, <span class="keyword">function</span> (event) &#123;</span><br><span class="line">            event.clipboardData.setData(<span class="string">&quot;text&quot;</span>, window.getSelection().toString())</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>在谷歌chrome浏览器里 打开<strong>管理扩展程序</strong>， 勾选 <strong>开发者模式</strong>  点击<strong>加载已解压的扩展程序</strong></p><p>打开我们的项目，固定到扩展程序</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一个解决B站文章不可复制插件&quot;&gt;&lt;a href=&quot;#一个解决B站文章不可复制插件&quot; class=&quot;headerlink&quot; title=&quot;一个解决B站文章不可复制插件&quot;&gt;&lt;/a&gt;一个解决B站文章不可复制插件&lt;/h1&gt;&lt;h2 id=&quot;配置文件-manifest-jso</summary>
+      
+    
+    
+    
+    <category term="浏览器插件" scheme="https://hard-workingrookie.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+    
+    
+    <category term="浏览器插件" scheme="https://hard-workingrookie.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>websocket</title>

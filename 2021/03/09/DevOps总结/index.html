@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DevOps总结 | 王美的个人博客</title><meta name="description" content="DevOps 是什么？DevOps来自Development和Operations的结合,突出重视软件开发人员和运维人员的沟通合作DevOps 是一种软件开发方法。它将持续开发、持续测试、持续集成、持续部署和持续监控贯穿于软件开发的整个生命周期。当前几乎所有的顶尖公司均采用了该方法，用以提高软件开发质量，并缩短软件开发生命周期。从而以达到每个公司对软件产品的期望，交付出客户最满意的产品。 Dev"><meta name="keywords" content="DevOps"><meta name="author" content="王美"><meta name="copyright" content="王美"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hard-workingrookie.github.io/2021/03/09/DevOps%E6%80%BB%E7%BB%93/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="DevOps总结"><meta property="og:url" content="https://hard-workingrookie.github.io/2021/03/09/DevOps%E6%80%BB%E7%BB%93/"><meta property="og:site_name" content="王美的个人博客"><meta property="og:description" content="DevOps 是什么？DevOps来自Development和Operations的结合,突出重视软件开发人员和运维人员的沟通合作DevOps 是一种软件开发方法。它将持续开发、持续测试、持续集成、持续部署和持续监控贯穿于软件开发的整个生命周期。当前几乎所有的顶尖公司均采用了该方法，用以提高软件开发质量，并缩短软件开发生命周期。从而以达到每个公司对软件产品的期望，交付出客户最满意的产品。 Dev"><meta property="og:image" content="http://tvshow.date/images/1391569032.png"><meta property="article:published_time" content="2021-03-09T13:42:24.000Z"><meta property="article:modified_time" content="2021-03-09T14:06:29.896Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.1',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '',
+  last_push_date: {"zeroDay":"今天","suffix":"天前"},
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+      const now = new Date()
+      const expiryDay = ttl * 86400000
+      const item = {
+        value: value,
+        expiry: now.getTime() + expiryDay,
+      }
+      localStorage.setItem(key, JSON.stringify(item))
+    },
+  
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2021-03-09 22:06:29'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="王美的个人博客" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">22</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Share/"><i class="fa-fw fas fa-heart"></i><span> Share</span></a></div><div class="menus_item"><a class="site-page" href="/Diary/"><i class="fa-fw fas fa-paint-brush"></i><span> Diary</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-info"></i><span> About</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DevOps-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">DevOps 是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DevOps%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">DevOps流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DevOps%E5%B7%A5%E5%85%B7%E9%93%BE"><span class="toc-number">3.</span> <span class="toc-text">DevOps工具链</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(http://tvshow.date/images/1391569032.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">王美的个人博客</a></span><span class="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/Share/"><i class="fa-fw fas fa-heart"></i><span> Share</span></a></div><div class="menus_item"><a class="site-page" href="/Diary/"><i class="fa-fw fas fa-paint-brush"></i><span> Diary</span></a></div><div class="menus_item"><a class="site-page" href="/About/"><i class="fa-fw fas fa-info"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">DevOps总结</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-09T13:42:24.000Z" title="发表于 2021-03-09 21:42:24">2021-03-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-09T14:06:29.896Z" title="更新于 2021-03-09 22:06:29">2021-03-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/DevOps/">DevOps</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p><img src= "/img/loading.gif" data-lazy-src="http://tvshow.date/images/1175964-20191105059673.png"></p>
+<h1 id="DevOps-是什么？"><a href="#DevOps-是什么？" class="headerlink" title="DevOps 是什么？"></a>DevOps 是什么？</h1><p>DevOps来自<code>Development</code>和<code>Operations</code>的结合,突出重视<strong>软件开发人员</strong>和<strong>运维人员</strong>的沟通合作<br>DevOps 是一种软件开发方法。它将持续开发、持续测试、持续集成、持续部署和持续监控贯穿于软件开发的整个生命周期。当前几乎所有的顶尖公司均采用了该方法，用以提高软件开发质量，并缩短软件开发生命周期。从而以达到每个公司对软件产品的期望，交付出客户最满意的产品。</p>
+<h1 id="DevOps流程"><a href="#DevOps流程" class="headerlink" title="DevOps流程"></a>DevOps流程</h1><p><img src= "/img/loading.gif" data-lazy-src="http://tvshow.date/images/1391569032.png"><br>计划（plan）、编码(code)、编译(build)、测试(test)、发布(release)、部署(deploy)、运营(operate)、监控（monitor）</p>
+<h1 id="DevOps工具链"><a href="#DevOps工具链" class="headerlink" title="DevOps工具链"></a>DevOps工具链</h1><p><img src= "/img/loading.gif" data-lazy-src="http://tvshow.date/images/v2-c371a2b21c503a0fef8c271070778edf_720w.jpg"></p>
+<ol>
+<li>Puppet<br>Puppet 是使用最广泛的 DevOps 工具。允许快速、频繁地交付和发布技术更改。具有版本控制、自动测试和连续交付的功能。可以将整个基础架构作为代码进行管理，而无需扩大团队规模。<br>特性</li>
+</ol>
+<ol start="2">
+<li>Ansible<br>Ansible 是领先的 DevOps 工具。Ansible 是一个开源 IT 引擎，可自动执行应用部署、云供应、内部服务编排和其他 IT 工具。DevOps 团队可以更轻松地扩展自动化规模并提高生产率。<br>Ansible 易于部署，因为它在客户端不使用任何代理或自定义安全性基础结构、也不通过将模块推送到客户端。这些模块在客户端本地执行，并将输出推回 Ansible 服务器。</li>
+</ol>
+<ol start="3">
+<li>Docker<br>Docker 是高端 DevOps 工具，允许在多个系统上构建、交付和运行分布式应用程序。有助于从组件快速组装应用，通常适用于容器管理。</li>
+</ol>
+<ol start="4">
+<li>Nagios<br>Nagios 是 DevOps 的更有用的工具之一。它可以确定错误并在网络、基础架构、服务器和日志监视系统的帮助下进行纠正。</li>
+</ol>
+<ol start="5">
+<li><p>CHEF<br>Chef 是实现规模、速度和一致性的有用工具。Chef 是基于云的系统和开源技术。这项技术使用 Ruby 编码来开发必不可少的构建基块，例如菜谱和烹饪书。Chef 用于基础架构自动化，并有助于减少用于基础架构管理的手动和重复性任务。</p>
+</li>
+<li><p>Jenkins<br>Jenkins 是一个 DevOps 工具，用于监视重复任务的执行。Jenkins 是允许持续集成的软件。Jenkins 将安装在将进行集中构建的服务器上。通过快速发现问题，它有助于更有效地集成项目变更。</p>
+</li>
+</ol>
+<p>几乎不需要维护，并具有内置的 GUI 工具，可轻松进行更新。<br>7) Git<br>Git 是一个开源的分布式版本控制系统，每个人都可以免费使用。它旨在快速高效地处理从小到大的项目。开发它是为了协调程序员之间的工作。版本控件使您可以在同一工作区中跟踪团队成员并与之一起工作。它用作 DevOps 工具的关键分布式版本控制。</p>
+<ol start="8">
+<li><p>SALTSTACK<br>Stackify 是轻量级的 DevOps 工具。它显示实时错误查询日志并且更直接地显示到工作站中。SALTSTACK 是针对软件定义的数据中心进行智能编排的理想解决方案。</p>
+</li>
+<li><p>Splunk<br>Splunk 是使机器数据对所有人可用、可访问且有价值的工具。为 DevOps 团队提供运营情报。帮助公司提高安全性、生产率和竞争力。</p>
+</li>
+<li><p>Selenium<br>Selenium 是用于Web应用程序的便携式软件测试框架。它为开发自动化测试提供了简单的界面。</p>
+</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">王美</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hard-workingrookie.github.io/2021/03/09/DevOps%E6%80%BB%E7%BB%93/">https://hard-workingrookie.github.io/2021/03/09/DevOps%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hard-workingrookie.github.io" target="_blank">王美的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/DevOps/">DevOps</a></div><div class="post_share"><div class="social-share" data-image="http://tvshow.date/images/1391569032.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechat.jpg"/></a><div class="post-qr-code-desc"></div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg"/></a><div class="post-qr-code-desc"></div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/03/14/js%E9%9D%A2%E8%AF%95%E9%A2%98/"><img class="prev-cover" data-lazy-src="https://i.loli.net/2021/01/07/jVBSPybQ2g461to.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">js面试题</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/07/electron%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86/"><img class="next-cover" data-lazy-src="http://tvshow.date/images/1504170750981724.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">electron窗口管理</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" style="background-image: url(http://tvshow.date/images/1391569032.png)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 王美</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi,  welcome  to  my  <a  href="https://hard-workingrookie.github.io/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/click_heart.js" async="async"></script></div></body></html>
